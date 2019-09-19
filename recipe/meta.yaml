@@ -1,6 +1,6 @@
 {% set name = "pygcn" %}
-{% set version = "0.1.19" %}
-{% set sha256 = "72ebc6ced064abf6425533bc0110ed919790235e05a115c680d92403d5138623" %}
+{% set version = "0.1.20" %}
+{% set sha256 = "1243b19957326e040e0c074882a0472c373363a6bd42d79401f4690fdb4e150d" %}
 
 package:
   name: "{{ name|lower }}"
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vvv "
+  script: "{{ PYTHON }} -m pip install . -vvv"
   entry_points:
     - pygcn-listen = gcn.cmdline:listen_main
     - pygcn-serve = gcn.cmdline:serve_main
@@ -37,6 +37,8 @@ test:
   requires:
     - pytest
   commands:
+    - pygcn-listen --help
+    - pygcn-serve --help
     - python -m pytest --pyargs gcn
 
 about:
