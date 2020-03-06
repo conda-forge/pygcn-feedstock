@@ -43,9 +43,9 @@ test:
 
 about:
   home: https://github.com/lpsinger/pygcn
-  license: GPLv2+
+  license: GPLv3+
   license_family: GPL
-  license_file: COPYING
+  license_file: LICENSE.md
   summary: Anonymous VOEvent client for receiving GCN/TAN notices in XML format
   description: |
     The Gamma-ray Coordinates Network/Transient Astronomy Network (GCN/TAN),
