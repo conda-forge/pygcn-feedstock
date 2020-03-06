@@ -1,10 +1,10 @@
 {% set name = "pygcn" %}
-{% set version = "1.0.0" %}
-{% set sha256 = "34a5387572a7f8dfd7639cb944a768fa86ab1703eef0c28bf553785e15275aab" %}
+{% set version = "1.0.2" %}
+{% set sha256 = "39522bc262dd02173fc6a8903a2754095e19bb3a28dc6b7de065c816d2568927" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   noarch: python
-  script: "{{ PYTHON }} -m pip install . -vvv"
+  script: {{ PYTHON }} -m pip install . -vvv
   entry_points:
     - pygcn-listen = gcn.cmdline:listen_main
     - pygcn-serve = gcn.cmdline:serve_main
@@ -43,9 +43,9 @@ test:
 
 about:
   home: https://github.com/lpsinger/pygcn
-  license: GPLv2+
+  license: GPLv3+
   license_family: GPL
-  license_file: COPYING
+  license_file: LICENSE.md
   summary: Anonymous VOEvent client for receiving GCN/TAN notices in XML format
   description: |
     The Gamma-ray Coordinates Network/Transient Astronomy Network (GCN/TAN),
