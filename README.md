@@ -3,9 +3,9 @@ About pygcn
 
 Home: https://github.com/lpsinger/pygcn
 
-Package license: GPLv2+
+Package license: GPLv3+
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/pygcn-feedstock/blob/master/LICENSE.txt)
 
 Summary: Anonymous VOEvent client for receiving GCN/TAN notices in XML format
 
