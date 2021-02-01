@@ -42,7 +42,7 @@ test:
 
 about:
   home: https://github.com/lpsinger/pygcn
-  license: GPLv3+
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.md
   summary: Anonymous VOEvent client for receiving GCN/TAN notices in XML format
