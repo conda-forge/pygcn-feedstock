@@ -34,6 +34,7 @@ test:
     - gcn.notice_types
     - gcn.voeventclient
   requires:
+    - setuptools  # for pkg_resources
     - pytest
   commands:
     - pygcn-listen --help
