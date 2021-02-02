@@ -1,6 +1,6 @@
 {% set name = "pygcn" %}
-{% set version = "1.0.2" %}
-{% set sha256 = "39522bc262dd02173fc6a8903a2754095e19bb3a28dc6b7de065c816d2568927" %}
+{% set version = "1.1.0" %}
+{% set sha256 = "cc7ce49171cef24bafa9c9c33a2227fc9c2e13f79c78b6e34b0d87da557dbc89" %}
 
 package:
   name: {{ name|lower }}
@@ -26,7 +26,6 @@ requirements:
   run:
     - python
     - lxml
-    - six
 
 test:
   imports:
@@ -35,6 +34,7 @@ test:
     - gcn.notice_types
     - gcn.voeventclient
   requires:
+    - setuptools  # for pkg_resources
     - pytest
   commands:
     - pygcn-listen --help
@@ -43,7 +43,7 @@ test:
 
 about:
   home: https://github.com/lpsinger/pygcn
-  license: GPLv3+
+  license: GPL-3.0-or-later
   license_family: GPL
   license_file: LICENSE.md
   summary: Anonymous VOEvent client for receiving GCN/TAN notices in XML format
