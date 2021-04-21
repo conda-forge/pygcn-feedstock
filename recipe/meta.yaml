@@ -1,6 +1,6 @@
 {% set name = "pygcn" %}
-{% set version = "1.1.0" %}
-{% set sha256 = "cc7ce49171cef24bafa9c9c33a2227fc9c2e13f79c78b6e34b0d87da557dbc89" %}
+{% set version = "1.1.1" %}
+{% set sha256 = "f9a2bf62f72fc7dff38962872e39fca7fe112bc2339bdf067bbe68ba94e50804" %}
 
 package:
   name: {{ name|lower }}
