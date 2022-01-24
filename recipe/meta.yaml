@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vvv
   entry_points:
@@ -20,26 +20,29 @@ build:
 
 requirements:
   host:
-    - python >=3.7
     - pip
-    - setuptools >=30.3.0
-  run:
     - python >=3.7
+    - setuptools >=42
+    - setuptools-scm >=3.4
+    - wheel
+  run:
     - lxml
+    - python >=3.7
 
 test:
+  requires:
+    - pip
+    - pytest
   imports:
     - gcn
     - gcn.handlers
     - gcn.notice_types
     - gcn.voeventclient
-  requires:
-    - setuptools  # for pkg_resources
-    - pytest
   commands:
+    - python -m pip check
+    - python -m pytest --pyargs gcn
     - pygcn-listen --help
     - pygcn-serve --help
-    - python -m pytest --pyargs gcn
 
 about:
   home: https://github.com/lpsinger/pygcn
