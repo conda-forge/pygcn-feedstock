@@ -11,7 +11,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vvv
   entry_points:
@@ -20,12 +20,14 @@ build:
 
 requirements:
   host:
-    - python >=3.7
     - pip
-    - setuptools >=30.3.0
-  run:
     - python >=3.7
+    - setuptools >=42
+    - setuptools-scm >=3.4
+    - wheel
+  run:
     - lxml
+    - python >=3.7
 
 test:
   imports:
