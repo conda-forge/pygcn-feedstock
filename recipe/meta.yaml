@@ -30,18 +30,19 @@ requirements:
     - python >=3.7
 
 test:
+  requires:
+    - pip
+    - pytest
   imports:
     - gcn
     - gcn.handlers
     - gcn.notice_types
     - gcn.voeventclient
-  requires:
-    - setuptools  # for pkg_resources
-    - pytest
   commands:
+    - python -m pip check
+    - python -m pytest --pyargs gcn
     - pygcn-listen --help
     - pygcn-serve --help
-    - python -m pytest --pyargs gcn
 
 about:
   home: https://github.com/lpsinger/pygcn
